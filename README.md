@@ -1,6 +1,6 @@
 # Parcial segundo corte 
 
-Se despliega una aplicacion web que permite realizar dos algoritmos de busqueda esenciales en la ciencia de la computación como la busqueda binaria y la busqueda lineal.
+Se despliega una aplicacion web que permite realizar dos algoritmos de busqueda esenciales en la ciencia de la computación como la busqueda binaria y la busqueda lineal, mediante una estructura de microservicios, donde un servidor proxy genera recibe las solicitudes del usuario y las distribuye mendiante el algoritmo de round-robin a los dos servidores disponibles para realizar las busquedas.
 
 ## ¿Que debe tener?
 1. Descarga git
@@ -39,14 +39,14 @@ Y en la ultima terminal donde se vera el otro Math service
     java -jar target/ParcialSegundoCorte-0.0.1-SNAPSHOT.jar --server.port=8082
 ```
 
-![alt text](image.png)
+![alt text](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/terminales.png)
 
 4. Ingresa a http://localhost:8080
 
 
 En caso de que no se encuentre el numero en la lista se mostrara -1 en la parte de output del mensaje json
 
-![alt text](image.png)
+![alt text](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/local.png)
 
 
 La terminal del proxy mostrará a que servicios manda la solicitud de los servidores Math
@@ -58,7 +58,7 @@ Falta la implemetación de esta parte.
 
 ## Arquitectura
 Se utiliza una arquitectura de microservicios la cual tiene un servicio para computar las funciones de ordenamiento, ademas de implementar un proxy que recibe las solicitudes de los clientes y las delega a las dos instacias de los servicios de ordenamiento usando el algoritmo round-robin, que distribuye las cargas entre los dos servidores de (MathService)
-![alt text](image.png)
+![alt text](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/Arquitectura.png)
 
 
 ## Diagrama de clases
