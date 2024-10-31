@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Linear Search</h1>
+    <form action="/linearsearch">
+        <label for="List">List of numbers:</label><br>
+        <input type="text" id="list" name="list" placeholder="5,4,3,5,9"><br><br>
+        <label for="value">Value to search(In case that the number doesn´t part of the list the result is
+            -1):</label><br>
+        <input type="text" id="value" name="value" placeholder="5"><br><br>
+        <input type="button" value="Submit" onclick="loadGetLinearSearch()">
+    </form>
+    <div id="getLinearSearch"></div>
+
+    <h1>Binary Search</h1>
+    <form action="/binarysearch">
+        <label for="ListBinary">List of numbers:</label><br>
+        <input type="text" id="listBinary" name="listBinary" placeholder="5,4,3,5,9"><br><br>
+        <label for="valueBinary">Value to search(In case that the number doesn´t part of the list the result is
+            -1):</label><br>
+        <input type="text" id="valueBinary" name="valueBinary" placeholder="5"><br><br>
+        <input type="button" value="Submit" onclick="loadGetBinarySearch()">
+    </form>
+    <div id="getrespmsg1"></div>
+
+    <script>
+        function loadGetLinearSearch() {
+            let list = document.getElementById("list").value;
+            let value = document.getElementById("value").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("getLinearSearch").innerHTML =
+                    this.responseText;
+            }
+            xhttp.open("GET", "/proxy/linearsearch?list=" + list + "&value=" + value);
+            xhttp.send();
+        }
+    </script>
+
+
+    <script>
+        function loadGetBinarySearch() {
+            let list = document.getElementById("listBinary").value;
+            let value = document.getElementById("valueBinary").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("getrespmsg1").innerHTML =
+                    this.responseText;
+            }
+            xhttp.open("GET", "/proxy/binarysearch?list=" + list + "&value=" + value);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
