@@ -19,8 +19,8 @@ import jakarta.websocket.server.ServerEndpoint;
 
 @Service
 public class HttpConnectionExample {
-
     private final List<String> servers = Arrays.asList("http://localhost:8081", "http://localhost:8082");
+    // private final List<String> servers = Arrays.asList("http://54.92.148.117:8081", "http://34.228.226.9:8082");
     int currentIndex = 0;
 
     public ResponseEntity<String> linearSearch (int[] list, int value){
