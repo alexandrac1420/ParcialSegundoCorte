@@ -51,6 +51,9 @@ En caso de que no se encuentre el numero en la lista se mostrara -1 en la parte 
 
 La terminal del proxy mostrará a que servicios manda la solicitud de los servidores Math
 
+![image](https://github.com/user-attachments/assets/03b1432a-628b-44c7-aedb-b0b7b15f0e64)
+
+
 
 ## Usarlo en EC2
 Falta la implemetación de esta parte.
