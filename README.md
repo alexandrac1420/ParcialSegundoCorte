@@ -56,7 +56,7 @@ Para poder ejecutar este proyecto, necesitas instalar las siguientes herramienta
 La aplicación permite:
 
 1. **Buscar mediante búsqueda lineal**: dada una lista de números, busca un valor específico y devuelve la posición si se encuentra.
-2. **Buscar mediante búsqueda binaria**: ordena la lista y aplica búsqueda binaria para encontrar el valor.
+2. **Buscar mediante búsqueda binaria**: ordena automáticamente la lista antes de aplicar la búsqueda binaria, por lo que el usuario no necesita ordenarla previamente.
 3. **Distribuir carga**: el proxy distribuye las solicitudes usando round-robin entre dos instancias de Math Service.
 
 ### Pasos para correr la aplicación localmente
@@ -110,7 +110,7 @@ La terminal del proxy mostrará a que servicios manda la solicitud de los servid
 
 ## Despliegue en AWS EC2
 
-![AWS](https://github.com/alexandrac1420/Seguridad_Nube/blob/master/Pictures/Funcionamiento%20AWS.gif)
+![AWS](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(2).gif)
 
 Para desplegar la aplicación en AWS EC2, debes configurar varias instancias para el proxy y los Math Services, utilizando direcciones IP públicas para permitir que las instancias se comuniquen entre sí.
 
@@ -164,7 +164,7 @@ Para desplegar la aplicación en AWS EC2, debes configurar varias instancias par
    - Ingresa a la dirección IP pública de la instancia del Proxy en el puerto `8080` (por ejemplo, `http://<Proxy-EC2-IP>:8080`) para realizar las búsquedas y demostrar el funcionamiento.
    - El proxy distribuirá las solicitudes entre las instancias de Math Services utilizando balanceo de carga round-robin.
 
-    ![Image](image.png)
+    ![Image](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/ec2.png)
 
 
 ## Arquitectura
@@ -174,11 +174,12 @@ La arquitectura del sistema utiliza una configuración distribuida con varias in
 2. **Service Proxy (en EC2)**: Punto de entrada para todas las solicitudes de búsqueda, que distribuye las solicitudes a través de un balanceo de carga round-robin entre los servicios de matemáticas.
 3. **Math Services (en dos instancias EC2)**: Servidores que procesan la lógica de búsqueda, ejecutando la búsqueda lineal o binaria según lo solicitado y devolviendo los resultados al proxy.
 
-![alt text](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/Arquitectura.png)
+![Diagrama de arquitectura](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/Arquitectura.png)
 
 
 ## Diagrama de clases
 El sistema se compone de las siguientes clases principales:
+![Diagrama de clases](https://github.com/alexandrac1420/ParcialSegundoCorte/blob/master/pictures/DiagramaClases.png)
 
 1. **ProxyController**
 
